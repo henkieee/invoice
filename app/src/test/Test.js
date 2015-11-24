@@ -11,10 +11,8 @@
     $stateProvider
       .state('view1', {
         url: "/view1",
-        templateUrl: "./src/test/partials/view1.html",
-        controller: function($scope) {
-          $scope.test = 'It works!!!'
-        }
+        templateUrl: "./src/test/color/colorView.html",
+        controller: 'colorController'
       })
       .state('view2', {
         url: "/view2",
