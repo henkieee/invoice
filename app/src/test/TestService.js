@@ -1,8 +1,8 @@
 (function(){
   'use strict';
 
-  angular.module('users')
-         .service('userService', ['$q', UserService]);
+  angular.module('test')
+         .service('testService', ['$q', TestService]);
 
   /**
    * Users DataService
@@ -12,7 +12,8 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UserService($q){
+  function TestService($q)
+  {
     var users = [
       {
         name: 'Lia Lugo',
