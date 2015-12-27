@@ -13,8 +13,11 @@
   {
     $scope.test = 'It works!!!';
 
-    $scope.showTabDialog = function(ev)
+    $scope.pickCategorie = function(ev, categorie)
     {
+      //load color on categorie
+      console.log('categorie', categorie);
+
       $mdDialog.show({
           controller: DialogController,
           templateUrl: './src/test/color/partials/color-picker.html',

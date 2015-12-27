@@ -14,6 +14,19 @@
    */
   function TestService($q)
   {
+    var colorCategories = [
+      {
+        name: "Graniet",
+        img: ""
+      },
+      {
+        name: "Keramiek",
+        img: ""
+      }
+    ];
+
+
+
     var users = [
       {
         name: 'Lia Lugo',
