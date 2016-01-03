@@ -1,0 +1,27 @@
+<md-dialog aria-label="{{ categorie }}">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{ categorie }}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="./assets/svg/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="padding: 15px !important;max-width:800px;max-height:810px; ">
+            <h2>Kies een categorie</h2>
+            <div id="colorarticles">
+                <div ng-repeat="categorie in categories",
+                     class="colortile" ng-click="pickCategorie(categorie)">
+                    <div class="image" style="background: url({{ categorie.img }}); background-size:contain;">
+                        &nbsp;
+                    </div>
+                    <div class="colordescription">
+                        <p class="description">{{ categorie.title }}</p>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

@@ -12,7 +12,8 @@
       .state('view1', {
         url: "/view1",
         templateUrl: "./src/test/color/colorView.html",
-        controller: 'colorController'
+        controller: 'colorController',
+        controllerAs: 'color'
       })
       .state('view2', {
         url: "/view2",

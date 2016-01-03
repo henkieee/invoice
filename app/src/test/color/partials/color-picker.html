@@ -1,8 +1,8 @@
-<md-dialog aria-label="Mango (Fruit)">
+<md-dialog aria-label="{{ categorie }}">
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Mango (Fruit)</h2>
+                <h2>{{ categorie }}</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <md-icon md-svg-src="./assets/svg/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
@@ -12,24 +12,25 @@
         <md-dialog-content style="padding: 15px !important;max-width:800px;max-height:810px; ">
             <h2>Kies een kleur</h2>
             <div id="colorarticles">
-                <div class="colortile" ng-click="">
-                    <div class="image" style="background: url('http://www.menkenwerkbladen.nl/img/cadpanel/0901%20KS.jpg'); background-size:contain;">
+                <div ng-repeat="color in categories[categorie].colors",
+                     class="colortile" ng-click="pickColor(color)">
+                    <div class="image" style="background: url({{ color.img }}); background-size:contain;">
                         <!--  <img src="/img/cadpanel/0901 KS.jpg"> -->
                         &nbsp;
                     </div>
                     <div class="colordescription">
-                        <p class="description">0901 KS<br><span>Black</span></p>
+                        <p class="description">{{ color.code }}<br><span>{{ color.name }}</span></p>
                     </div>
-                    <div id="artdesc480" style="display: none;">0901 KS<br>
-                        Black</div>
-                    <div id="artnotes480" style="display: none;">Segment: Uni<br>
-                        Merk: Resopal<br>
-                        Lengte maximaal 5200 mm<br>
-                        ABS hoogte maximaal 76 mm<br>
-                        FSC MIX 70 % gecertificeerd<br>
-                        <br>
-                    </div>
-                    <div id="artimgurl480" style="display: none;">/img/cadpanel/0901 KS.jpg</div>
+                    <!--<div id="artdesc480" style="display: none;">0901 KS<br>-->
+                        <!--Black</div>-->
+                    <!--<div id="artnotes480" style="display: none;">Segment: Uni<br>-->
+                        <!--Merk: Resopal<br>-->
+                        <!--Lengte maximaal 5200 mm<br>-->
+                        <!--ABS hoogte maximaal 76 mm<br>-->
+                        <!--FSC MIX 70 % gecertificeerd<br>-->
+                        <!--<br>-->
+                    <!--</div>-->
+                    <!--<div id="artimgurl480" style="display: none;">/img/cadpanel/0901 KS.jpg</div>-->
                 </div>
             </div>
         </md-dialog-content>

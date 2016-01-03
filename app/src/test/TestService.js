@@ -14,18 +14,61 @@
    */
   function TestService($q)
   {
+    var item = {
+      categorie: null,
+      color: null
+    };
+
     var colorCategories = [
       {
-        name: "Graniet",
-        img: ""
+        id: "hpl",
+        img: "http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg",
+        title: "Hpl",
+        header: "",
+        colors: [{
+          id: "0901KS",
+          code: "0901 KS",
+          name: "Black",
+          img: "http://www.menkenwerkbladen.nl/img/cadpanel/0901%20KS.jpg"
+        }]
       },
       {
-        name: "Keramiek",
-        img: ""
+        id: "graniet",
+        img: "http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg",
+        title: "Graniet",
+        header: "",
+        colors: [{
+          id: "0901KA",
+          code: "0901 KA",
+          name: "Purple",
+          img: "http://www.menkenwerkbladen.nl/img/cadpanel/0901%20KS.jpg"
+        }]
+      },
+      {
+        id: "composiet",
+        img: "http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg",
+        title: "Composiet",
+        header: "",
+        colors: [{
+          id: "0901KB",
+          code: "0901 KB",
+          name: "Pink",
+          img: "http://www.menkenwerkbladen.nl/img/cadpanel/0901%20KS.jpg"
+        }]
+      },
+      {
+        id: "keramiek",
+        img: "http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg",
+        title: "Keramiek",
+        header: "",
+        colors: [{
+          id: "0901KC",
+          code: "0901 KC",
+          name: "White",
+          img: "http://www.menkenwerkbladen.nl/img/cadpanel/0901%20KS.jpg"
+        }]
       }
     ];
-
-
 
     var users = [
       {
@@ -65,6 +108,24 @@
       loadAllUsers : function() {
         // Simulate async nature of real remote calls
         return $q.when(users);
+      },
+      fetchColorCategories: function () {
+        return $q.when(colorCategories);
+      },
+      getItem: function () {
+        return item;
+      },
+      getCategorieColor: function () {
+        return (item.categorie && item.color)
+            ? item.categorie + " " + item.color
+            : "Kleuren";
+      },
+      setCategorie: function (categorie) {
+        item.categorie = categorie;
+        console.log('item', item);
+      },
+      setColor: function (color) {
+        item.color = color;
       }
     };
   }

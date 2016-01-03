@@ -32,6 +32,8 @@
     self.onSwipeRight = onSwipeRight;
     self.onSwipeLeft = onSwipeLeft;
     self.showContactOptions = showContactOptions;
+    self.item = testService.getItem();
+
 
     // Load all registered users
 

@@ -46,6 +46,7 @@ md-list .md-button {
 #content  {
   padding-left: 40px;
   padding-right: 40px;
+  padding-bottom: 20px;
   padding-top: 5px;
 }
 
@@ -141,6 +142,8 @@ div.colortile {
   -moz-transition:all 0.4s linear;
   transition:all 0.4s linear;
   -webkit-backface-visibility: hidden;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
 
 div.colortile:hover{
@@ -203,4 +206,32 @@ div.colortile div.colordescription p {
 
 .md-dialog-content h2 {
   padding: 8px;
+}
+
+.md-toolbar-tools h2 {
+  text-transform: capitalize;
+}
+
+.md-tab {
+  height: 100px;
+}
+
+.md-tab span {
+  white-space: pre-line;
+}
+
+.md-card {
+  padding: 10px;
+}
+
+.card-media {
+  width: 180px;
+  height: 140px;
+  background-size: 180px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+.md-card-invoice {
+  max-width: 300px !important;
 }

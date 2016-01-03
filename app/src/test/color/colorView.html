@@ -1,47 +1,65 @@
-<h1 class="md-display-2">Kleuren</h1>
-<div id="switchboard">
-    <div class="colortile" style="cursor: pointer;" ng-click="pickCategorie($event, 'keramiek')">
-        <div class="image" style="background: url('http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg');">
+<h1 class="md-display-2">Kies een categorie</h1>
+
+<div ng-if="color.current">
+    <md-card class="md-card md-card-invoice">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{ color.categorie.id }}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+            <div class="md-media-xl card-media" style="background: url({{ color.categorie.img }});">
+            </div>
+            <md-card-actions layout="column">
+                <md-button ng-click="color.modalPickCategorie()"
+                        class="md-icon-button" aria-label="Share">
+                    <md-tooltip md-direction="top">
+                        Wijzigen
+                    </md-tooltip>
+                    <i class="material-icons"><i class="material-icons">&#xE254;</i></i>
+                </md-button>
+            </md-card-actions>
+        </md-card-content>
+    </md-card>
+</div>
+<div ng-if="color.current">
+    <h1 class="md-display-2">Kies een kleur</h1>
+    <md-card class="md-card md-card-invoice">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{ color.current.name }} {{ color.current.code }}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+            <div class="md-media-xl card-media",
+                 style="background: url({{ color.categorie.img }});">
+            </div>
+            <md-card-actions layout="column">
+                <md-button ng-click="color.modalPickColor()"
+                           class="md-icon-button" aria-label="Share">
+                    <md-tooltip md-direction="top">
+                        Wijzigen
+                    </md-tooltip>
+                    <i class="material-icons"><i class="material-icons">&#xE254;</i></i>
+                </md-button>
+            </md-card-actions>
+        </md-card-content>
+    </md-card>
+    <md-button class="md-primary md-raised" ng-click="pickCategorie($event, 'keramiek')" flex-sm="100" flex-md="100" flex-gt-md="auto">
+        Verzenden
+    </md-button>
+</div>
+
+<div id="switchboard" ng-if='!color.current'>
+    <div ng-repeat="categorie in color.categories",
+         class="colortile",
+         style="cursor: pointer;",
+         ng-click="color.pickCategorie($event, categorie)">
+        <div class="image" style="background: url({{ categorie.img }});">
             &nbsp;
         </div>
         <div class="colordescription">
-            <p class="description uppercase">HPL FANTASIE</p>
-        </div>
-    </div>
-    <div class="colortile" style="cursor: pointer;">
-        <div class="image" style="background: url('http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg');">
-            &nbsp;
-        </div>
-        <div class="colordescription">
-            <p class="description">GRANIET</p>
-        </div>
-    </div>
-    <div class="colortile" style="cursor: pointer;">
-        <div class="image" style="background: url('http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg');">
-            &nbsp;
-        </div>
-        <div class="colordescription">
-            <p class="description">COMPOSIET</p>
-        </div>
-    </div>
-    <div class="colortile" style="cursor: pointer;">
-        <div class="image" style="background: url('http://www.menkenwerkbladen.nl/img/layout/colortiles/Icoon%20HPL%20Uni.jpg');">
-            &nbsp;
-        </div>
-        <div class="colordescription">
-            <p class="description">KERAMIEK</p>
+            <p class="description uppercase">{{ categorie.title }}</p>
         </div>
     </div>
 </div>
-<h3>{{ test }}</h3>
-<md-button class="md-primary md-raised" ng-click="pickCategorie($event, 'keramiek')" flex-sm="100" flex-md="100" flex-gt-md="auto">
-    Tab Dialog
-</md-button>
-<p>
-    Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Nulla venenatis ante augue.
-    Phasellus volutpat neque ac dui mattis vulputate.
-    Etiam consequat aliquam cursus. In sodales pretium ultrices.
-    Maecenas lectus est,
-    sollicitudin consectetur felis nec, feugiat ultricies mi.
-</p>
