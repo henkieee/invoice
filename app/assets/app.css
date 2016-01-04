@@ -232,6 +232,11 @@ div.colortile div.colordescription p {
   background-position: center center !important;
 }
 
+.invoice-card {
+  position: relative;
+  display: inline-table;
+}
+
 .md-card-invoice {
   max-width: 300px !important;
 }

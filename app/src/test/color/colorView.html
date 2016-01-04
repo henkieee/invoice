@@ -1,5 +1,5 @@
-<div ng-if="color.current">
-    <h2>Uw gemaakte keuzes</h2>
+<h2 ng-if="color.current">Uw gemaakte keuzes</h2>
+<div ng-if="color.current" class="invoice-card">
     <md-card class="md-card md-card-invoice">
         <md-card-title>
             <md-card-title-text>
@@ -22,7 +22,7 @@
         </md-card-content>
     </md-card>
 </div>
-<div ng-if="color.current">
+<div ng-if="color.current" class="invoice-card">
     <md-card class="md-card md-card-invoice">
         <md-card-title>
             <md-card-title-text>
@@ -45,10 +45,10 @@
             </md-card-actions>
         </md-card-content>
     </md-card>
-    <md-button class="md-primary md-raised" ng-click="pickCategorie($event, 'keramiek')" flex-sm="100" flex-md="100" flex-gt-md="auto">
-        Verzenden
-    </md-button>
 </div>
+<!--<md-button class="md-primary md-raised" ng-click="pickCategorie($event, 'keramiek')" flex-sm="100" flex-md="100" flex-gt-md="auto">-->
+    <!--Verzenden-->
+<!--</md-button>-->
 
 <div id="switchboard" ng-if='!color.current'>
     <h1 class="md-display-2">Categorie</h1>
