@@ -1,10 +1,10 @@
-<h1 class="md-display-2">Kies een categorie</h1>
-
 <div ng-if="color.current">
+    <h2>Uw gemaakte keuzes</h2>
     <md-card class="md-card md-card-invoice">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">{{ color.categorie.id }}</span>
+                <span class="md-headline">{{ color.categorie.title }}</span>
+                <span class="md-subhead">Categorie</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content layout="row" layout-align="space-between">
@@ -23,11 +23,11 @@
     </md-card>
 </div>
 <div ng-if="color.current">
-    <h1 class="md-display-2">Kies een kleur</h1>
     <md-card class="md-card md-card-invoice">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">{{ color.current.name }} {{ color.current.code }}</span>
+                <span class="md-subhead">Kleur</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content layout="row" layout-align="space-between">
@@ -51,6 +51,8 @@
 </div>
 
 <div id="switchboard" ng-if='!color.current'>
+    <h1 class="md-display-2">Categorie</h1>
+    <h3>Maak uw keuze</h3>
     <div ng-repeat="categorie in color.categories",
          class="colortile",
          style="cursor: pointer;",
